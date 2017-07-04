@@ -107,10 +107,10 @@
 >横屏和竖屏的截图
 
  * 横屏
- <img src="imgs/device-landscape.png" width = "384" height="216"  alt="图片名称" />
+ <img src="imgs/device-landscape.jpg" width = "384" height="216"  alt="图片名称" />
 
  * 竖屏
- <img src="imgs/device-portrait.png" height = "384" width="216"  alt="图片名称" />
+ <img src="imgs/device-portrait.jpg" height = "384" width="216"  alt="图片名称" />
 
  * 动态调整
  <img src="imgs/seeker.gif" width = "216" height="384"  alt="图片名称" />
