@@ -115,6 +115,11 @@
  * 动态调整
  <img src="imgs/seeker.gif" width = "216" height="384"  alt="图片名称" />
 
+
+>无论是横屏还是竖屏，SupperLayout总是把宽度划分为768个单位，ImageView的大小是300等分，
+文字的大小是70等分。可以看出，无论屏幕的宽度怎么变化，ImageView和TextView的相对大小和相
+对位置，都没有发生变化从而实现自适应布局
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
  <!--suppress AndroidDomInspection -->
