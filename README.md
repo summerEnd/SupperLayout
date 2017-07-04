@@ -16,7 +16,7 @@
 
 >`app:layout_width_units="integer|auto"`
 >
->SupperLayout宽度的数值,如果为auto则自动计算一个宽度数值
+>这个数值会被SupperLayout用来划分宽度,如果为auto则自动计算一个宽度数值
 
 >`app:layout_height_units="integer|auto"`
 >
@@ -24,7 +24,9 @@
 
 >`app:fixedBy="width|height"`
 >
->width固定宽度，height固定高度。默认值是width
+>默认值是width；如果是width，对应的android:layout_width必须是match_parent或者一个固定的值;
+>如果是height，对应的android:layout_height必须是match_parent或者一个固定的值;SupperLayout
+>会根据这个值去计算一个单位元的大小。
 
 ####  2.子标签属性
 ```XML
@@ -150,9 +152,11 @@ public class MainActivity extends Activity {
  <img src="imgs/seeker.gif" width = "216" height="384"  alt="图片名称" />
 
 
->无论是横屏还是竖屏，SupperLayout总是把宽度划分为768个单位，ImageView的大小是300等分，
+>在上个例子中，无论是横屏还是竖屏，SupperLayout总是把宽度划分为768个单位，ImageView的大小是300等分，
 文字的大小是70等分。可以看出，无论屏幕的宽度怎么变化，ImageView和TextView的相对大小和相
-对位置，都没有发生变化从而实现自适应布局
+对位置，都没有发生变化，从而实现自适应布局
+
+### 2.自适应布局
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
