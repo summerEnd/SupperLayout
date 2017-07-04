@@ -62,10 +62,58 @@
 
 >`app:textSizeUnits="40"`
 >
->文字的大小，设置这个值后，如果没有设定高度，会自动根据文字大小计算出一个高度。建议不要TextView设定高度，应该使用根据文字大小计算出来的高度
+>文字的大小
 
-## Demo
+## 二、Demo
 
+### 1.用SeekBar测试自适应
+>布局文件
+
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+    <SeekBar
+        android:id="@+id/mSeeker"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:max="100"/>
+    <com.sumauto.SupperLayout
+        android:id="@+id/mSupperLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1a000000"
+        app:layout_width_units="768">
+
+        <TextView android:text="@string/chuhe"
+                  android:textColor="#000"
+                  app:textSizeUnits="70"/>
+        <ImageView android:src="@mipmap/ic_launcher"
+                   app:heightUnits="300"
+                   app:widthUnits="300"
+                   app:x="400"/>
+    </com.sumauto.SupperLayout>
+
+</LinearLayout>
+```
+
+>横屏和竖屏的截图
+
+ * 横屏
+ <img src="imgs/device-landscape.png" width = "384" height="216"  alt="图片名称" />
+
+ * 竖屏
+ <img src="imgs/device-portrait.png" height = "384" width="216"  alt="图片名称" />
+
+ * 动态调整
+ <img src="imgs/seeker.gif" width = "216" height="384"  alt="图片名称" />
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
