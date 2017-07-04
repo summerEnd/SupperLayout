@@ -104,6 +104,40 @@
 </LinearLayout>
 ```
 
+>java代码
+
+```java
+public class MainActivity extends Activity {
+    SeekBar mSeeker;
+    SupperLayout mLayout;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.progress_layout);
+        mSeeker= (SeekBar) findViewById(R.id.mSeeker);
+        mLayout= (SupperLayout) findViewById(R.id.mSupperLayout);
+
+        mSeeker.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mLayout.getLayoutParams().width= progress * seekBar.getMeasuredWidth() / seekBar.getMax();
+                mLayout.requestLayout();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+    }
+}
+```
+
 >横屏和竖屏的截图
 
  * 横屏
